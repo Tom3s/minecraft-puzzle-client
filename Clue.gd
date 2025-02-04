@@ -144,6 +144,18 @@ func generate_buttons() -> void:
 		index += 1
 
 func print_clue() -> void:
+	var clue_size := Vector2i(1, 1)
+
+	for y in 3:
+		for x in 3:
+			var index: int = y * 3 + x
+			if cells[index] != Enums.Item.NONE:
+				clue_size.x = max(clue_size.x, x + 1)
+				clue_size.y = max(clue_size.y, y + 1)
+
+
+
+
 	var output: String = ""
 	# print("append(&board.clues, 
 	# 	Clue{
@@ -168,10 +180,13 @@ func print_clue() -> void:
 
 
 
-	output += "\t\t},
-\t\tsize = {3, 2},
-\t}
-)"
+	output += "\t\t},\n"
+	output += "\t\tsize = {"
+	output += str(clue_size.x)
+	output +=", "
+	output += str(clue_size.y)
+	output +="},\n"
+	output += "\t}\n)"
 	print(output)
 	DisplayServer.clipboard_set(output)
 
