@@ -1,0 +1,289 @@
+[gd_scene load_steps=17 format=3 uid="uid://deb61lxcnqa4m"]
+
+[ext_resource type="Script" path="res://ItemSelectUI.gd" id="1_bikwr"]
+[ext_resource type="Texture2D" uid="uid://db8la4cfb0oxi" path="res://textures/iron_sword.png" id="1_rifvv"]
+[ext_resource type="Texture2D" uid="uid://dq3mhsth2oa4i" path="res://textures/iron_pickaxe.png" id="2_323vl"]
+[ext_resource type="Texture2D" uid="uid://c8n56p5pctygm" path="res://textures/iron_chestplate.png" id="3_4j28w"]
+[ext_resource type="Texture2D" uid="uid://dxs1f1sna5y64" path="res://textures/gold_sword.png" id="4_e3s2y"]
+[ext_resource type="Texture2D" uid="uid://wpkxmc0k201l" path="res://textures/gold_pickaxe.png" id="5_blxrg"]
+[ext_resource type="Texture2D" uid="uid://cc855ktukougu" path="res://textures/gold_chestplate.png" id="6_vqib1"]
+[ext_resource type="Texture2D" uid="uid://bcbkq6dddqdq1" path="res://textures/diamond_sword.png" id="7_xtkr0"]
+[ext_resource type="Texture2D" uid="uid://fkobxepr6jm6" path="res://textures/diamond_pickaxe.png" id="8_wigrj"]
+[ext_resource type="Texture2D" uid="uid://dwlchbpprwk0" path="res://textures/diamond_chestplate.png" id="9_e0nq5"]
+[ext_resource type="Texture2D" uid="uid://ooqw6xpke65x" path="res://textures/iron.png" id="11_uuhtp"]
+[ext_resource type="Texture2D" uid="uid://cddnpbv4s36b1" path="res://textures/gold.png" id="12_g53gk"]
+[ext_resource type="Texture2D" uid="uid://cf8o2m306pkmx" path="res://textures/diamond.png" id="13_6p5g7"]
+[ext_resource type="Texture2D" uid="uid://curbdx8pyjwld" path="res://textures/sword.png" id="14_lgo1f"]
+[ext_resource type="Texture2D" uid="uid://bao160ycnfats" path="res://textures/pickaxe.png" id="15_nbj7g"]
+[ext_resource type="Texture2D" uid="uid://cdasyin4mma8w" path="res://textures/chestplate.png" id="16_ukcwm"]
+
+[node name="ItemSelectUI" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bikwr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Control2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 20.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="IronSwordButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+icon = ExtResource("1_rifvv")
+icon_alignment = 1
+expand_icon = true
+
+[node name="IronPickaxeButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+icon = ExtResource("2_323vl")
+icon_alignment = 1
+expand_icon = true
+
+[node name="IronChestplateButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+icon = ExtResource("3_4j28w")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="GoldSwordButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+icon = ExtResource("4_e3s2y")
+icon_alignment = 1
+expand_icon = true
+
+[node name="GoldPickaxeButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+icon = ExtResource("5_blxrg")
+icon_alignment = 1
+expand_icon = true
+
+[node name="GoldChestplateButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+icon = ExtResource("6_vqib1")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="DiamondSwordButton" type="Button" parent="VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+icon = ExtResource("7_xtkr0")
+icon_alignment = 1
+expand_icon = true
+
+[node name="DiamondPickaxeButton" type="Button" parent="VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+icon = ExtResource("8_wigrj")
+icon_alignment = 1
+expand_icon = true
+
+[node name="DiamondChestplateButton" type="Button" parent="VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+icon = ExtResource("9_e0nq5")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="IronButton" type="Button" parent="VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+icon = ExtResource("11_uuhtp")
+icon_alignment = 1
+expand_icon = true
+
+[node name="GoldButton" type="Button" parent="VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+icon = ExtResource("12_g53gk")
+icon_alignment = 1
+expand_icon = true
+
+[node name="DiamondButton" type="Button" parent="VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+icon = ExtResource("13_6p5g7")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="SwordButton" type="Button" parent="VBoxContainer/HBoxContainer6"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+icon = ExtResource("14_lgo1f")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PickaxeButton" type="Button" parent="VBoxContainer/HBoxContainer6"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+icon = ExtResource("15_nbj7g")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ChestplateButton" type="Button" parent="VBoxContainer/HBoxContainer6"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+icon = ExtResource("16_ukcwm")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="EmptyButton" type="Button" parent="VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+text = "EMPTY"
+icon_alignment = 1
+expand_icon = true
+
+[node name="NoneButton" type="Button" parent="VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.81
+text = "NONE"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 20.0

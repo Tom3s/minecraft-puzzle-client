@@ -1,0 +1,133 @@
+[gd_scene load_steps=12 format=3 uid="uid://diebhoy4povu4"]
+
+[ext_resource type="FontFile" uid="uid://bgsegfvhcn0gm" path="res://mc-ten-lowercase-alt.ttf" id="1_ip51t"]
+[ext_resource type="Texture2D" uid="uid://j5uaqmdl71yx" path="res://textures/stone.png" id="2_hnhbn"]
+[ext_resource type="Texture2D" uid="uid://db8la4cfb0oxi" path="res://textures/iron_sword.png" id="3_6xk6s"]
+[ext_resource type="Texture2D" uid="uid://dq3mhsth2oa4i" path="res://textures/iron_pickaxe.png" id="4_hswv5"]
+[ext_resource type="Texture2D" uid="uid://c8n56p5pctygm" path="res://textures/iron_chestplate.png" id="5_ncn12"]
+[ext_resource type="Texture2D" uid="uid://dxs1f1sna5y64" path="res://textures/gold_sword.png" id="6_it8y6"]
+[ext_resource type="Texture2D" uid="uid://wpkxmc0k201l" path="res://textures/gold_pickaxe.png" id="7_4vqsg"]
+[ext_resource type="Texture2D" uid="uid://cc855ktukougu" path="res://textures/gold_chestplate.png" id="8_mf7xw"]
+[ext_resource type="Texture2D" uid="uid://bcbkq6dddqdq1" path="res://textures/diamond_sword.png" id="9_hynli"]
+[ext_resource type="Texture2D" uid="uid://fkobxepr6jm6" path="res://textures/diamond_pickaxe.png" id="10_6uigt"]
+[ext_resource type="Texture2D" uid="uid://dwlchbpprwk0" path="res://textures/diamond_chestplate.png" id="11_k6bmt"]
+
+[node name="Node2D" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="LevelLabels" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Padding" type="Control" parent="VBoxContainer/LevelLabels"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/LevelLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_ip51t")
+theme_override_font_sizes/font_size = 48
+text = "Difficulty"
+
+[node name="Label2" type="Label" parent="VBoxContainer/LevelLabels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ip51t")
+theme_override_font_sizes/font_size = 48
+text = "35"
+
+[node name="Padding2" type="Control" parent="VBoxContainer/LevelLabels"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="GridContainer2" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+texture = ExtResource("2_hnhbn")
+expand_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+texture = ExtResource("2_hnhbn")
+expand_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+texture = ExtResource("2_hnhbn")
+expand_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+texture = ExtResource("2_hnhbn")
+expand_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="VBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+texture = ExtResource("2_hnhbn")
+expand_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="VBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+texture = ExtResource("2_hnhbn")
+expand_mode = 5
+
+[node name="TextureRect7" type="TextureRect" parent="VBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+texture = ExtResource("2_hnhbn")
+expand_mode = 5
+
+[node name="TextureRect8" type="TextureRect" parent="VBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+texture = ExtResource("2_hnhbn")
+expand_mode = 5
+
+[node name="TextureRect9" type="TextureRect" parent="VBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+texture = ExtResource("2_hnhbn")
+expand_mode = 5
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemList" type="ItemList" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 14
+auto_height = true
+item_count = 9
+max_columns = 9
+icon_scale = 4.0
+item_0/icon = ExtResource("3_6xk6s")
+item_1/icon = ExtResource("4_hswv5")
+item_2/icon = ExtResource("5_ncn12")
+item_3/icon = ExtResource("6_it8y6")
+item_4/icon = ExtResource("7_4vqsg")
+item_5/icon = ExtResource("8_mf7xw")
+item_6/icon = ExtResource("9_hynli")
+item_7/icon = ExtResource("10_6uigt")
+item_8/icon = ExtResource("11_k6bmt")
