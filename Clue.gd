@@ -32,11 +32,15 @@ var cells: Array[Enums.Item] = \
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# render_clue()
-	generate_buttons()
+	# generate_buttons()
+	on_editing_changed(editing)
 
+	editing_button.button_pressed = editing
 	editing_button.toggled.connect(func(new_value: bool) -> void:
 		editing = new_value
 	)
+
+	print_button.pressed.connect(print_clue)
 
 	pass # Replace with function body.
 
@@ -138,3 +142,37 @@ func generate_buttons() -> void:
 		grid_container.add_child(button)
 
 		index += 1
+
+func print_clue() -> void:
+	var output: String = ""
+	# print("append(&board.clues, 
+	# 	Clue{
+	# 		item = {")
+	output += "append(&board.clues, 
+\tClue{
+\t\titem = {\n"
+				# {.EMPTY, .NONE, .GOLD_CHESTPLATE},
+				# {.NONE, .EMPTY, .NONE},
+				# {.NONE, .NONE, .NONE},
+	for y in 3:
+		# print("{")
+		output += "\t\t\t{"
+		for x in 3:
+			var index: int = y * 3 + x
+			# print(".", Enums.Item.keys()[cells[index]], ", ")
+			output += "."
+			output += Enums.Item.keys()[cells[index]]
+			if x != 2:
+				output += ", "
+		output += "},\n"
+
+
+
+	output += "\t\t},
+\t\tsize = {3, 2},
+\t}
+)"
+	print(output)
+	DisplayServer.clipboard_set(output)
+
+	
