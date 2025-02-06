@@ -36,9 +36,16 @@ alignment = 1
 [node name="EditingButton" type="CheckButton" parent="CanvasLayer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+button_pressed = true
 text = "Editing"
 
 [node name="PrintButton" type="Button" parent="CanvasLayer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Print Clue"
+
+[node name="ClearButton" type="Button" parent="CanvasLayer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Clear
+"

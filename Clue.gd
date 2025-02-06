@@ -7,6 +7,7 @@ class_name Clue
 
 @onready var editing_button: CheckButton = %EditingButton
 @onready var print_button: Button = %PrintButton
+@onready var clear_button: Button = %ClearButton
 
 @export
 var editing: bool = true:
@@ -41,6 +42,26 @@ func _ready() -> void:
 	)
 
 	print_button.pressed.connect(print_clue)
+
+	clear_button.pressed.connect(func() -> void:
+		cells = \
+		[
+			Enums.Item.NONE,
+			Enums.Item.NONE,
+			Enums.Item.NONE,
+
+			Enums.Item.NONE,
+			Enums.Item.NONE,
+			Enums.Item.NONE,
+			
+			Enums.Item.NONE,
+			Enums.Item.NONE,
+			Enums.Item.NONE,
+		]
+		
+		on_editing_changed(editing)
+
+	)
 
 	pass # Replace with function body.
 
