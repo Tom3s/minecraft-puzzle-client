@@ -5,9 +5,12 @@ class_name Clue
 @onready var grid_container: GridContainer = %GridContainer
 @onready var item_select_ui: ItemSelectUI = %ItemSelectUI
 
+@onready var nr_clues_label: Label = %NrCluesLabel
+@onready var name_edit: LineEdit = %NameEdit
 @onready var editing_button: CheckButton = %EditingButton
 @onready var print_button: Button = %PrintButton
 @onready var clear_button: Button = %ClearButton
+@onready var add_clue_button: Button = %AddClueButton
 
 @export
 var editing: bool = true:
@@ -30,6 +33,8 @@ var cells: Array[Enums.Item] = \
 	Enums.Item.NONE,
 ]
 
+var clues: Array = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# render_clue()
@@ -41,7 +46,7 @@ func _ready() -> void:
 		editing = new_value
 	)
 
-	print_button.pressed.connect(print_clue)
+	print_button.pressed.connect(print_problem)
 
 	clear_button.pressed.connect(func() -> void:
 		cells = \
@@ -58,7 +63,35 @@ func _ready() -> void:
 			Enums.Item.NONE,
 			Enums.Item.NONE,
 		]
-		
+
+		clues = []
+
+		nr_clues_label.text = "Nr Clues: " + str(clues.size())
+
+		on_editing_changed(editing)
+
+	)
+
+	add_clue_button.pressed.connect(func() -> void:
+		clues.push_back(cells)
+
+		nr_clues_label.text = "Nr Clues: " + str(clues.size())
+
+		cells = \
+		[
+			Enums.Item.NONE,
+			Enums.Item.NONE,
+			Enums.Item.NONE,
+
+			Enums.Item.NONE,
+			Enums.Item.NONE,
+			Enums.Item.NONE,
+			
+			Enums.Item.NONE,
+			Enums.Item.NONE,
+			Enums.Item.NONE,
+		]
+
 		on_editing_changed(editing)
 
 	)
@@ -164,13 +197,13 @@ func generate_buttons() -> void:
 
 		index += 1
 
-func print_clue() -> void:
+func print_clue(clue: Array[Enums.Item]) -> String:
 	var clue_size := Vector2i(1, 1)
 
 	for y in 3:
 		for x in 3:
 			var index: int = y * 3 + x
-			if cells[index] != Enums.Item.NONE:
+			if clue[index] != Enums.Item.NONE:
 				clue_size.x = max(clue_size.x, x + 1)
 				clue_size.y = max(clue_size.y, y + 1)
 
@@ -192,9 +225,9 @@ func print_clue() -> void:
 		output += "\t\t\t{"
 		for x in 3:
 			var index: int = y * 3 + x
-			# print(".", Enums.Item.keys()[cells[index]], ", ")
+			# print(".", Enums.Item.keys()[clue[index]], ", ")
 			output += "."
-			output += Enums.Item.keys()[cells[index]]
+			output += Enums.Item.keys()[clue[index]]
 			if x != 2:
 				output += ", "
 		output += "},\n"
@@ -208,7 +241,24 @@ func print_clue() -> void:
 	output += str(clue_size.y)
 	output +="},\n"
 	output += "\t}\n)"
+	# print(output)
+	# DisplayServer.clipboard_set(output)
+	return output
+
+func print_problem() -> void:
+	var output: String =  name_edit.text + " :: proc() {\n"
+	output += "\tboard: Board_State;\n"
+	output += "\tinit_board_state(&board);\n"
+
+	for i in clues.size():
+		var clue: Array[Enums.Item] = clues[i]
+		output += print_clue(clue)
+		output += "\n"
+	
+	output += "\tsolved_board := solve_board(&board);\n"
+	output += "\tprint_solution(solved_board);\n"
+	output += "}"
+
 	print(output)
 	DisplayServer.clipboard_set(output)
-
 	
